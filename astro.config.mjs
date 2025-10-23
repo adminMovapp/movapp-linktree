@@ -26,7 +26,7 @@ export default defineConfig({
 
    server: {
       host: true,
-      port: 7002,
+      port: 7004,
       headers: {
          'X-Frame-Options': 'SAMEORIGIN',
          'X-Content-Type-Options': 'nosniff',

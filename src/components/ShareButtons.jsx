@@ -7,7 +7,7 @@ import QrModal from './QrModal.jsx';
 export default function ShareButtons({ url }) {
    const [showQr, setShowQr] = useState(false);
 
-   const customTitle = 'ErikMann 🎤';
+   const customTitle = 'Movapp';
    const shareText = `LinkTree de ${customTitle} : ${url}`;
    const shareUrl = `https://wa.me/?text=${encodeURIComponent(shareText)}`;
 

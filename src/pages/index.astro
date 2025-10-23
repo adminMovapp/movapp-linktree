@@ -1,0 +1,76 @@
+---
+import Layout from '@layouts/Layout.astro';
+import { siteConfig } from '@utils/infoSite.jsx';
+import SpotifyPlayer from '@components/SpotifyPlayer.astro';
+import ShareButtons from '@components/ShareButtons.jsx';
+import { FaYoutube, FaInstagram, FaFacebook, FaTiktok, FaTwitch } from 'react-icons/fa';
+import { SiThreads, SiX } from 'react-icons/si'; // Simple Icons
+
+const { links } = siteConfig;
+const { logo, rostro } = siteConfig.assets;
+const { name, description, description2, description3 } = siteConfig.site;
+
+const iconMap = {
+   FaYoutube,
+   FaInstagram,
+   FaFacebook,
+   FaTiktok,
+   FaTwitch,
+   SiThreads,
+   SiX,
+};
+---
+
+<Layout title="LinkTree - ErikMann" description="LinkTree - ErikMann" type="website">
+   <img src={rostro} alt="rostro" class="w-28 h-28 rounded-full mb-3 border-1 border-line mt-4 mx-auto" />
+   <h1 class="text-font_color text-2xl font-bold mb-2 text-center">{name}</h1>
+   <p class="text-font_color mb-2 text-center text-xs">{description}</p>
+   <p class="text-font_color mb-2 text-center text-xs">{description2}</p>
+   <p class="text-font_color mb-2 text-center text-xs">{description3}</p>
+
+   <div class="w-full max-w-8xl mx-auto mt-8 flex flex-col gap-10 px-3">
+      <!-- Links Section -->
+      <div class="w-full space-y-6">
+         {
+            links.map((link) => {
+               const Icon = iconMap[link.icon];
+               return (
+                  <a
+                     href={link.url}
+                     target="_blank"
+                     rel="noopener noreferrer"
+                     class="flex w-full items-center bg-secondary/50 hover:bg-secondary/10 text-font_color font-semibold py-4 px-14 rounded-lg transition-all duration-200 shadow backdrop-blur-sm neon-outline"
+                  >
+                     <Icon class="w-20 h-20 mr-4" />
+                     <span class="flex-1 text-center">{link.name}</span>
+                  </a>
+               );
+            })
+         }
+      </div>
+
+      <!-- Spotify and Share Buttons Section -->
+      <div class="w-full flex flex-col items-center space-y-2">
+         <div class="w-full max-w-lg flex justify-center">
+            <SpotifyPlayer url={siteConfig.spotify.url} />
+         </div>
+         <div class="w-full max-w-lg">
+            <ShareButtons client:load url={siteConfig.url} />
+         </div>
+      </div>
+   </div>
+</Layout>
+
+<style>
+   .neon-outline {
+      position: relative;
+      z-index: 0;
+   }
+
+   .neon-outline::before {
+   }
+
+   .neon-outline:hover::before {
+      opacity: 1;
+   }
+</style>

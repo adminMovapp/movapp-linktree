@@ -1,0 +1,101 @@
+---
+import '@styles/global.css';
+import { siteConfig } from '@utils/infoSite.jsx';
+
+import GoogleAnalytics from '@components/GoogleAnalytics.astro';
+import { generateSEOTags, generateOrganizationSchema } from '@/utils/seo.jsx';
+
+// Generar tags SEO
+let seoTags;
+try {
+   const canonicalUrl = siteConfig.canonicalUrl || siteConfig.url; // Fallback to siteConfig.url if canonicalUrl is undefined
+   seoTags = generateSEOTags({
+      ...Astro.props,
+      url: new URL(Astro.url.pathname, canonicalUrl).href,
+   });
+} catch (error) {
+   console.error('Error generating SEO tags:', error);
+   seoTags = generateSEOTags({
+      ...Astro.props,
+      url: siteConfig.url, // Fallback to default URL
+   });
+}
+const organizationSchema = generateOrganizationSchema();
+
+const twitterHandle = siteConfig.social?.twitter || ''; // Ensure twitter handle is defined
+---
+
+<!doctype html>
+<html lang={siteConfig.site.language}>
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+      <!-- SEO básico -->
+      <title>{seoTags.title}</title>
+      <meta name="description" content={seoTags.description} />
+      <meta name="keywords" content={seoTags.keywords} />
+      <meta name="author" content={seoTags.author} />
+      <meta name="robots" content={seoTags.robots} />
+
+      <!-- Canonical URL -->
+      <link rel="canonical" href={seoTags.canonical} />
+
+      <!-- Open Graph -->
+      <meta property="og:type" content={seoTags.type} />
+      <meta property="og:url" content={seoTags.canonical} />
+      <meta property="og:title" content={seoTags.title} />
+      <meta property="og:description" content={seoTags.description} />
+      <meta property="og:image" content={seoTags.image} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:site_name" content={siteConfig.site.name} />
+      <meta property="og:locale" content={siteConfig.site.locale} />
+
+      <!-- Twitter Card -->
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:url" content={seoTags.canonical} />
+      <meta name="twitter:title" content={seoTags.title} />
+      <meta name="twitter:description" content={seoTags.description} />
+      <meta name="twitter:image" content={seoTags.image} />
+      <meta name="twitter:site" content={twitterHandle} />
+      <meta name="twitter:creator" content={twitterHandle} />
+
+      <!-- Favicon -->
+      <link rel="icon" type="image/x-icon" href={siteConfig.assets.favicon} />
+      <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
+      <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png" />
+      <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+      <meta name="theme-color" content={siteConfig.seo?.themeColor || '#ffffff'} />
+
+      <!-- Headers de seguridad -->
+      <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+      <!-- <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" /> -->
+      <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+      <meta name="generator" content={Astro.generator} />
+
+      <!-- Schema.org JSON-LD -->
+      <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+
+      <GoogleAnalytics />
+
+      <title>{Astro.props.title ? `${Astro.props.title}` : 'ErikMann - LinkTree'}</title>
+   </head>
+
+   <body class="min-h-screen flex justify-center items-start text-font_color relative bg-[#030303]">
+      <picture class="fixed inset-0 -z-10 w-full h-full">
+         <source srcset={siteConfig.assets.background} type="image/jpeg" />
+         <img
+            src={siteConfig.assets.background}
+            alt="Fondo LinkTree ErikMann"
+            class="object-cover w-full h-full"
+            loading="eager"
+            decoding="async"
+         />
+      </picture>
+      <main class="w-full max-w-xl flex flex-col items-center text-center px-6 py-8">
+         <slot />
+      </main>
+   </body>
+</html>

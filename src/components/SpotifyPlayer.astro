@@ -1,0 +1,26 @@
+---
+interface Props {
+   url: string;
+   height?: number;
+   theme?: '0' | '1'; // 0 = claro, 1 = oscuro
+}
+
+const { url, height = 152, theme = '0' } = Astro.props;
+
+const embedUrl = `https://open.spotify.com/embed${new URL(url).pathname}?utm_source=generator&theme=0`;
+---
+
+<div class="flex flex-col items-center lg:items-start space-y-6">
+   <div class="w-full max-w-xs">
+      <iframe
+         style="border-radius:12px"
+         src={embedUrl}
+         width="100%"
+         height={height}
+         frameborder="0"
+         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+         loading="lazy"
+      >
+      </iframe>
+   </div>
+</div>

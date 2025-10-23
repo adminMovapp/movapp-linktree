@@ -1,0 +1,47 @@
+---
+const GA4_ID = import.meta.env.PUBLIC_GA4_ID;
+---
+
+<!-- Google Analytics 4 para Astro -->
+<script is:inline define:vars={{ GA4_ID }}>
+   // Crear dataLayer
+   window.dataLayer = window.dataLayer || [];
+   function gtag() {
+      dataLayer.push(arguments);
+   }
+
+   // Cargar el script de GA4
+   const script = document.createElement('script');
+   script.src = `https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`;
+   script.async = true;
+   script.onload = () => {
+      gtag('js', new Date());
+      gtag('config', GA4_ID, { send_page_view: false }); // Desactivar envío automático
+      // Enviar vista de página inicial
+      gtag('event', 'page_view', {
+         page_path: window.location.pathname,
+         page_title: document.title,
+         page_location: window.location.href,
+      });
+   };
+   document.head.appendChild(script);
+
+   // Escuchar clics en enlaces externos
+   document.addEventListener('click', (e) => {
+      const link = e.target.closest('a');
+      if (!link) return; // no es un enlace
+
+      const domain = window.location.hostname;
+      const href = link.href;
+      const label = link.textContent.trim() || link.getAttribute('aria-label') || 'sin_texto';
+
+      // Solo medir si es un enlace externo
+      if (link.hostname !== domain) {
+         gtag('event', 'click_externo', {
+            event_category: 'enlace',
+            event_label: label,
+            link_url: href,
+         });
+      }
+   });
+</script>

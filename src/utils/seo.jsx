@@ -5,8 +5,8 @@ export function generateSEOTags(props = {}) {
    const site = siteConfig.site || {}; // Ensure `siteConfig.site` is defined
 
    const {
-      title = `${site.name || 'Erik Mann'} - ${site.title || 'Erik Mann'}`,
-      description = site.description || 'Erik Mann, Lider de Movapp, Creador de contenido',
+      title = `${site.name || 'LinkTree-Movapp'} - ${site.title || 'LinkTree-Movapp'}`,
+      description = site.description || 'LinkTree-Movapp ',
       keywords = site.keywords || 'default, keywords',
       image = siteConfig.defaultImage,
       type = 'website',

@@ -21,7 +21,7 @@ const iconMap = {
 };
 ---
 
-<Layout title="LinkTree - ErikMann" description="LinkTree - ErikMann" type="website">
+<Layout title="LinkTree - Movapp" description="LinkTree - Movapp" type="website">
    <img src={rostro} alt="rostro" class="w-28 h-28 rounded-full mb-3 border-1 border-line mt-4 mx-auto" />
    <h1 class="text-font_color text-2xl font-bold mb-2 text-center">{name}</h1>
    <p class="text-font_color mb-2 text-center text-xs">{description}</p>
@@ -51,9 +51,9 @@ const iconMap = {
 
       <!-- Spotify and Share Buttons Section -->
       <div class="w-full flex flex-col items-center space-y-2">
-         <div class="w-full max-w-lg flex justify-center">
+         <!-- <div class="w-full max-w-lg flex justify-center">
             <SpotifyPlayer url={siteConfig.spotify.url} />
-         </div>
+         </div> -->
          <div class="w-full max-w-lg">
             <ShareButtons client:load url={siteConfig.url} />
          </div>

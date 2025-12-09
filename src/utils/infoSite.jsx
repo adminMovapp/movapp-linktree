@@ -16,26 +16,34 @@ export const siteConfig = {
 
    assets: {
       logo: '/images/img-movapp.jpg',
-      rostro: '/images/img-movapp.jpg',
-
+      rostro: '/images/LogoMovappNvo.png',
+      parrafo: '/images/Parrafo.png',
       favicon: '/images/ico-movapp.ico',
-      background: '/images/FondoMuro.jpeg',
+      background: '/images/FONDO.png',
+      footer: '/images/Footer.png',
    },
    url: 'https://linktree.movapp.mx',
    links: [
-      { name: 'Youtube', url: 'https://youtube.com/@movappoficial', icon: 'FaYoutube' },
-      { name: 'Instagram', url: 'https://www.instagram.com/movappbymann', icon: 'FaInstagram' },
-      { name: 'Facebook', url: 'https://www.facebook.com/movappbymann', icon: 'FaFacebook' },
-      { name: 'TikTok', url: 'https://www.tiktok.com/@movappbymann', icon: 'FaTiktok' },
-      // { name: 'Twitch', url: 'https://www.twitch.tv/erikmann89', icon: 'FaTwitch' },
-      { name: 'Threads', url: 'https://www.threads.com/@movappbymann', icon: 'SiThreads' },
-      // { name: 'X', url: 'https://x.com/erikmanndp', icon: 'SiX' },
-      // { name: 'Spotify', url: 'https://open.spotify.com/show/0rd9N6Xcs0MgDE2YyTKvzZ', icon: 'FaSpotify' },
+      {
+         name: 'Youtube',
+         url: 'https://www.youtube.com/@MovappByErikmann',
+         icon: 'FaYoutube',
+         image: '/images/Youtube.png',
+      },
+      {
+         name: 'Instagram',
+         url: 'https://www.instagram.com/movappbymann',
+         icon: 'FaInstagram',
+         image: '/images/Instagram.png',
+      },
+      {
+         name: 'Facebook',
+         url: 'https://www.facebook.com/movappbymann',
+         icon: 'FaFacebook',
+         image: '/images/Facebook.png',
+      },
+      { name: 'TikTok', url: 'https://www.tiktok.com/@movappbymann', icon: 'FaTiktok', image: '/images/TikTok.png' },
    ],
-
-   spotify: {
-      url: 'https://open.spotify.com/show/0rd9N6Xcs0MgDE2YyTKvzZ',
-   },
 
    canonicalUrl: 'https://linktree.movapp.mx',
 

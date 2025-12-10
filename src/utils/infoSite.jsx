@@ -22,7 +22,7 @@ export const siteConfig = {
       background: '/images/FONDO.png',
       footer: '/images/Footer.png',
    },
-   url: 'https://linktree.movapp.mx',
+   url: 'https://linktree.movapp.org',
    links: [
       {
          name: 'Youtube',
@@ -45,7 +45,7 @@ export const siteConfig = {
       { name: 'TikTok', url: 'https://www.tiktok.com/@movappbymann', icon: 'FaTiktok', image: '/images/TikTok.png' },
    ],
 
-   canonicalUrl: 'https://linktree.movapp.mx',
+   canonicalUrl: 'https://linktree.movapp.org',
 
    business: {
       contactType: 'customer service',

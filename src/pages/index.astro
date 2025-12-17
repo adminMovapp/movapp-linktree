@@ -21,9 +21,13 @@ const { parrafo, rostro } = siteConfig.assets;
                      href={link.url}
                      target="_blank"
                      rel="noopener noreferrer"
-                     class="flex h-12 w-full  justify-center items-center bg-secondary/10 hover:bg-secondary/10  py-4 px-8 rounded-lg transition-all duration-200 shadow backdrop-blur-sm neon-outline"
+                     class="flex h-12 w-full  justify-center items-center bg-secondary/30 hover:bg-secondary/10  py-4 px-8 rounded-lg transition-all duration-200 shadow backdrop-blur-sm neon-outline"
                   >
-                     <img src={link.image} alt={link.name + 'logo'} class="w-auto h-6 mx-auto" />
+                     <img
+                        src={link.image}
+                        alt={link.name + ' logo'}
+                        class="w-auto h-6 mx-auto transition-transform duration-300 hover:-translate-x-1 "
+                     />
                   </a>
                );
             })
@@ -38,4 +42,29 @@ const { parrafo, rostro } = siteConfig.assets;
       <!-- Footer Image -->
       <img src={siteConfig.assets.footer} alt="footer" class="mx-auto mt-2 w-28" />
    </div>
+   <style>
+      a:hover img {
+         animation: wiggle 0.4s ease-in-out;
+      }
+      @keyframes wiggle {
+         0% {
+            transform: translateX(0);
+         }
+         20% {
+            transform: translateX(-4px);
+         }
+         40% {
+            transform: translateX(4px);
+         }
+         60% {
+            transform: translateX(-2px);
+         }
+         80% {
+            transform: translateX(2px);
+         }
+         100% {
+            transform: translateX(0);
+         }
+      }
+   </style>
 </Layout>

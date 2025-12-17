@@ -25,11 +25,17 @@ export const siteConfig = {
    url: 'https://linktree.movapp.org',
    links: [
       {
-         name: 'Youtube',
-         url: 'https://www.youtube.com/@MovappByErikmann',
+         name: 'Official Web',
+         url: 'https://www.movapp.org',
          icon: 'FaYoutube',
-         image: '/images/Youtube.png',
+         image: '/images/Oficial.png',
       },
+      // {
+      //    name: 'Youtube',
+      //    url: 'https://www.youtube.com/@MovappByErikmann',
+      //    icon: 'FaYoutube',
+      //    image: '/images/Youtube.png',
+      // },
       {
          name: 'Instagram',
          url: 'https://www.instagram.com/movappbymann',

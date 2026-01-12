@@ -8,8 +8,8 @@ const { parrafo, rostro } = siteConfig.assets;
 ---
 
 <Layout title="LinkTree - Movapp" description="LinkTree - Movapp" type="website">
-   <img src={rostro} alt="rostro" class="rounded-full mb-3 border-1 border-line mt-4 mx-auto w-56" />
-   <img src={parrafo} alt="parrafo" class="rounded-full mb-3 border-1 border-line mt-4 mx-auto w-56" />
+   <img src={rostro} alt="rostro" class="rounded-full mb-1 border-1 border-line mt-2 mx-auto w-56" />
+   <img src={parrafo} alt="parrafo" class="rounded-full mb-1 border-1 border-line mt-4 mx-auto w-64" />
 
    <div class="w-full max-w-8xl mx-auto mt-8 flex flex-col gap-10 px-3">
       <!-- Links Section -->
@@ -26,7 +26,7 @@ const { parrafo, rostro } = siteConfig.assets;
                      <img
                         src={link.image}
                         alt={link.name + ' logo'}
-                        class="w-auto h-6 mx-auto transition-transform duration-300 hover:-translate-x-1 "
+                        class={`w-auto max-w-xs mx-auto transition-transform duration-300 hover:-translate-x-1 ${link.name === 'Official Web' ? 'h-7' : 'h-6'}`}
                      />
                   </a>
                );

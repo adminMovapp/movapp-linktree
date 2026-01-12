@@ -30,12 +30,12 @@ export const siteConfig = {
          icon: 'FaYoutube',
          image: '/images/Oficial.png',
       },
-      // {
-      //    name: 'Youtube',
-      //    url: 'https://www.youtube.com/@MovappByErikmann',
-      //    icon: 'FaYoutube',
-      //    image: '/images/Youtube.png',
-      // },
+      {
+         name: 'Youtube',
+         url: 'https://www.youtube.com/@elhackfunciona',
+         icon: 'FaYoutube',
+         image: '/images/Youtube.png',
+      },
       {
          name: 'Instagram',
          url: 'https://www.instagram.com/movappbymann',

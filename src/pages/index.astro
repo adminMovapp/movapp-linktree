@@ -8,8 +8,8 @@ const { parrafo, rostro } = siteConfig.assets;
 ---
 
 <Layout title="LinkTree - Movapp" description="LinkTree - Movapp" type="website">
-   <img src={rostro} alt="rostro" class="rounded-full mb-3 border-1 border-line mt-4 mx-auto w-56" />
-   <img src={parrafo} alt="parrafo" class="rounded-full mb-3 border-1 border-line mt-4 mx-auto w-56" />
+   <img src={rostro} alt="rostro" class="max-w-56" />
+   <img src={parrafo} alt="parrafo" class="mb-8 max-w-72" />
 
    <div class="w-full max-w-8xl mx-auto mt-2 flex flex-col gap-10 px-3">
       <!-- Links Section -->
@@ -21,12 +21,13 @@ const { parrafo, rostro } = siteConfig.assets;
                      href={link.url}
                      target="_blank"
                      rel="noopener noreferrer"
-                     class="flex h-12 w-full  justify-center items-center bg-transparent hover:bg-secondary/10  py-4 px-8 rounded-lg transition-all duration-200 shadow backdrop-blur-sm neon-outline"
+                     class="flex h-12 w-full justify-center items-center bg-transparent hover:bg-transparent py-4 px-8 rounded-lg transition-all duration-200 shadow-none backdrop-blur-none border-none outline-none"
+                     style="background:transparent;box-shadow:none;"
                   >
                      <img
                         src={link.image}
                         alt={link.name + ' logo'}
-                        class={`w-auto max-w-xs mx-auto transition-transform duration-300 hover:-translate-x-1 ${link.name === 'Official Web' ? 'h-7' : 'h-6'}`}
+                        class={`w-auto max-w-xs mx-auto transition-transform duration-300 hover:-translate-x-1 ${link.name === 'Official Web' ? 'h-4' : 'h-4'}`}
                      />
                   </a>
                );

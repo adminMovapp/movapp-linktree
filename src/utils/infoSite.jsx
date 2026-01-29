@@ -28,7 +28,7 @@ export const siteConfig = {
          name: 'Official Web',
          url: 'https://www.movapp.org',
          icon: 'FaYoutube',
-         image: '/images/Oficial.png',
+         image: '/images/WEB OFICIAL.png',
       },
       {
          name: 'Youtube',

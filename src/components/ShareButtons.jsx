@@ -18,7 +18,7 @@ export default function ShareButtons({ url }) {
                href={shareUrl}
                target="_blank"
                rel="noopener noreferrer"
-               className="bg-primary hover:bg-primary/70 text-white p-3 rounded-full shadow-md transition"
+               className="bg-transparent hover:bg-primary/10 text-white p-3 rounded-full shadow-md transition"
                aria-label="Compartir"
             >
                <FiShare2 className="w-6 h-6" />
@@ -26,7 +26,7 @@ export default function ShareButtons({ url }) {
 
             <button
                onClick={() => setShowQr(true)}
-               className="bg-primary hover:bg-primary/70 text-white p-3 rounded-full shadow-md transition"
+               className="bg-transparent hover:bg-primary/10 text-white p-3 rounded-full shadow-md transition"
                aria-label="Mostrar QR"
             >
                <FaQrcode className="w-6 h-6" />

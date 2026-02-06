@@ -17,9 +17,9 @@ export const siteConfig = {
    assets: {
       logo: '/images/img-movapp.jpg',
       rostro: '/images/LOGO.png',
-      parrafo: '/images/PARRAFO.png',
+      parrafo: '/images/Parrafo.png',
       favicon: '/images/ico-movapp.ico',
-      background: '/images/FONDO_2.png',
+      background: '/images/FONDO_3.png',
       footer: '/images/Footer.png',
    },
    url: 'https://linktree.movapp.org',

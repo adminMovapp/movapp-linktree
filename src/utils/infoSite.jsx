@@ -51,6 +51,19 @@ export const siteConfig = {
       { name: 'TikTok', url: 'https://www.tiktok.com/@movappbymann', icon: 'FaTiktok', image: '/images/TIK TOK.png' },
    ],
 
+   appStores: [
+      {
+         name: 'Google Play',
+         url: 'https://play.google.com/store/apps/details?id=com.movapp.mobile&hl=es_MX&referrer=utm_source%3Dwebsite%26utm_medium%3Dorganic%26utm_campaign%3Dsite_download',
+         image: '/images/Playstore.webp',
+      },
+      {
+         name: 'App Store',
+         url: 'https://apps.apple.com/mx/app/movapp-by-erik-mann/id6755009066?ct=website_download',
+         image: '/images/Appstore.webp',
+      },
+   ],
+
    canonicalUrl: 'https://linktree.movapp.org',
 
    business: {

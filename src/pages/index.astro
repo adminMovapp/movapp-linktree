@@ -3,7 +3,7 @@ import Layout from '@layouts/Layout.astro';
 import { siteConfig } from '@utils/infoSite.jsx';
 import ShareButtons from '@components/ShareButtons.jsx';
 
-const { links } = siteConfig;
+const { links, appStores } = siteConfig;
 const { parrafo, rostro } = siteConfig.assets;
 ---
 
@@ -32,6 +32,21 @@ const { parrafo, rostro } = siteConfig.assets;
                   </a>
                );
             })
+         }
+      </div>
+
+      <!-- App Download Section -->
+      <div class="flex w-full items-center justify-center gap-3">
+         {
+            appStores.map((store) => (
+               <a href={store.url} target="_blank" rel="noopener noreferrer" aria-label={`Descargar en ${store.name}`}>
+                  <img
+                     src={store.image}
+                     alt={`Disponible en ${store.name}`}
+                     class="h-11 w-auto transition-transform duration-300"
+                  />
+               </a>
+            ))
          }
       </div>
 
